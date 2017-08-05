@@ -21,5 +21,11 @@ class LightControl(models.Model):
 
         self.save()
 
+    def switch_on_str(self):
+        if self.switch_on:
+            return "ON"
+        else:
+            return "OFF"
+
     def __str__(self):
-        return self.location
+        return self.location + " " + self.switch_on_str()
